@@ -8,6 +8,7 @@ import {
   Database,
   Layers,
   Terminal,
+  ExternalLink,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons';
 
@@ -15,10 +16,11 @@ export default function Hero({ profile }) {
   const [taglineIndex, setTaglineIndex] = useState(0);
 
   const taglines = profile?.taglines || [
-    'MERN Stack Specialist',
-    'React & Node.js Engineer',
-    'REST & Full-Stack Architect',
-    'Clean Code Enthusiast',
+    'Full-Stack MERN Developer',
+    'AI & Web Applications Engineer',
+    'BSc in CSE from AUST',
+    'IEEE Published AI Researcher',
+    'React & Node.js Specialist',
   ];
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export default function Hero({ profile }) {
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-              <span>Available for Full-time Roles & Contracts</span>
+              <span>Available for Software Engineering Roles & Contracts</span>
             </div>
 
             {/* Headline */}
@@ -48,7 +50,7 @@ export default function Hero({ profile }) {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
                 Hi, I'm{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">
-                  {profile?.fullName || 'Alex Rivera'}
+                  {profile?.fullName || 'MD Asadul Islam'}
                 </span>
               </h1>
               <div className="h-10 sm:h-12 flex items-center justify-center lg:justify-start">
@@ -64,13 +66,13 @@ export default function Hero({ profile }) {
             {/* Bio paragraph */}
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               {profile?.bio ||
-                'Passionate full-stack developer dedicated to building responsive React frontends, robust Node/Express backends, and high-performance MongoDB data architectures.'}
+                'Software Engineer and Full-Stack MERN Developer specializing in high-performance web applications, modern AI integrations (GPT-4o mini / OpenRouter), and clean architectural design.'}
             </p>
 
             {/* MERN Stack Badges */}
             <div className="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-semibold">
               <span className="px-3 py-1 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 flex items-center gap-1.5">
-                <Database className="w-3.5 h-3.5" /> MongoDB Atlas
+                <Database className="w-3.5 h-3.5" /> MongoDB
               </span>
               <span className="px-3 py-1 rounded-lg bg-slate-500/10 text-slate-700 dark:text-slate-300 border border-slate-500/20 flex items-center gap-1.5">
                 <Layers className="w-3.5 h-3.5" /> Express.js
@@ -81,6 +83,9 @@ export default function Hero({ profile }) {
               <span className="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
                 <Terminal className="w-3.5 h-3.5" /> Node.js
               </span>
+              <span className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" /> AI / LLM Integrations
+              </span>
             </div>
 
             {/* CTA Action Buttons */}
@@ -89,32 +94,34 @@ export default function Hero({ profile }) {
                 href="#projects"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/40 transition-all transform hover:-translate-y-0.5"
               >
-                <span>View My Work</span>
+                <span>View Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 transition-all"
+                href="https://vivabot-lake.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900/60 transition-all text-sm"
               >
-                <Mail className="w-4 h-4" />
-                <span>Contact Me</span>
+                <Sparkles className="w-4 h-4" />
+                <span>Live VivaBot.AI</span>
+                <ExternalLink className="w-3.5 h-3.5" />
               </a>
 
               <a
-                href={profile?.socialLinks?.resume || '#'}
-                download
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-sm"
+                href="#contact"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 transition-all text-sm"
               >
-                <Download className="w-4 h-4" />
-                <span>Resume</span>
+                <Mail className="w-4 h-4" />
+                <span>Get in Touch</span>
               </a>
             </div>
 
             {/* Social Icons */}
             <div className="pt-4 flex items-center justify-center lg:justify-start gap-3">
               <a
-                href={profile?.socialLinks?.github || 'https://github.com'}
+                href="https://github.com/Asadul09"
                 target="_blank"
                 rel="noreferrer"
                 className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:scale-110 transition-all"
@@ -123,7 +130,7 @@ export default function Hero({ profile }) {
                 <GithubIcon className="w-5 h-5" />
               </a>
               <a
-                href={profile?.socialLinks?.linkedin || 'https://linkedin.com'}
+                href="https://linkedin.com/in/asadul09"
                 target="_blank"
                 rel="noreferrer"
                 className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:scale-110 transition-all"
@@ -132,16 +139,7 @@ export default function Hero({ profile }) {
                 <LinkedinIcon className="w-5 h-5" />
               </a>
               <a
-                href={profile?.socialLinks?.twitter || 'https://x.com'}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:scale-110 transition-all"
-                aria-label="Twitter Profile"
-              >
-                <TwitterIcon className="w-5 h-5" />
-              </a>
-              <a
-                href={`mailto:${profile?.email || 'alex.rivera.dev@gmail.com'}`}
+                href="mailto:asadulislam.dev@gmail.com"
                 className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:scale-110 transition-all"
                 aria-label="Direct Email"
               >
@@ -164,7 +162,7 @@ export default function Hero({ profile }) {
                     <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" />
                   </div>
                   <span className="text-slate-400 text-xs flex items-center gap-1 font-sans">
-                    <Sparkles className="w-3.5 h-3.5 text-indigo-400" /> developer.config.js
+                    <Sparkles className="w-3.5 h-3.5 text-indigo-400" /> asadul.engineer.js
                   </span>
                   <div className="w-10" />
                 </div>
@@ -173,42 +171,42 @@ export default function Hero({ profile }) {
                 <div className="p-5 space-y-2 overflow-x-auto text-slate-300">
                   <p>
                     <span className="text-purple-400">const</span>{' '}
-                    <span className="text-indigo-300">developer</span> = &#123;
+                    <span className="text-indigo-300">softwareEngineer</span> = &#123;
                   </p>
                   <p className="pl-4">
                     <span className="text-slate-400">name:</span>{' '}
-                    <span className="text-emerald-300">'{profile?.fullName || 'Alex Rivera'}'</span>,
+                    <span className="text-emerald-300">'MD Asadul Islam'</span>,
                   </p>
                   <p className="pl-4">
-                    <span className="text-slate-400">role:</span>{' '}
-                    <span className="text-emerald-300">'Full Stack Engineer'</span>,
+                    <span className="text-slate-400">education:</span>{' '}
+                    <span className="text-emerald-300">'BSc in CSE, AUST'</span>,
                   </p>
                   <p className="pl-4">
-                    <span className="text-slate-400">stack:</span> [
+                    <span className="text-slate-400">location:</span>{' '}
+                    <span className="text-emerald-300">'Dhaka, Bangladesh'</span>,
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">primaryStack:</span> [
                     <span className="text-amber-300">'MongoDB'</span>,{' '}
                     <span className="text-amber-300">'Express'</span>,{' '}
                     <span className="text-amber-300">'React'</span>,{' '}
                     <span className="text-amber-300">'Node'</span>],
                   </p>
                   <p className="pl-4">
-                    <span className="text-slate-400">passions:</span> [
-                    <span className="text-emerald-300">'Clean Architecture'</span>,{' '}
-                    <span className="text-emerald-300">'Fast APIs'</span>],
+                    <span className="text-slate-400">flagshipApp:</span>{' '}
+                    <span className="text-purple-300">'VivaBot.AI (MERN + GPT-4o)'</span>,
+                  </p>
+                  <p className="pl-4">
+                    <span className="text-slate-400">publications:</span>{' '}
+                    <span className="text-pink-300">'IEEE (First Author, XAI)'</span>,
                   </p>
                   <p className="pl-4">
                     <span className="text-slate-400">status:</span>{' '}
-                    <span className="text-emerald-400">'Ready for hire'</span>,
+                    <span className="text-emerald-400">'Open to opportunities'</span>,
                   </p>
-                  <p className="pl-4">
-                    <span className="text-indigo-400">buildAwesomeApp:</span> (idea) =&gt; &#123;
-                  </p>
-                  <p className="pl-8 text-slate-400">
-                    <span className="text-purple-400">return</span> idea.turnIntoReality();
-                  </p>
-                  <p className="pl-4">&#125;,</p>
                   <p>&#125;;</p>
                   <p className="pt-2 text-slate-500 italic">
-                    // Ready to turn your product vision into code.
+                    // Turning complex logic into intuitive products.
                   </p>
                 </div>
               </div>

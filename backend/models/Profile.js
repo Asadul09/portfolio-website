@@ -5,56 +5,67 @@ const profileSchema = new mongoose.Schema(
     fullName: {
       type: String,
       required: true,
-      default: 'Alex Rivera',
+      default: 'MD Asadul Islam',
     },
     roleTitle: {
       type: String,
-      default: 'Full Stack MERN Developer',
+      default: 'Software Engineer · Full-Stack MERN Developer',
     },
     taglines: {
       type: [String],
       default: [
-        'Full Stack Developer',
-        'MERN Stack Enthusiast',
-        'Open Source Contributor',
-        'UI/UX Craftsman',
+        'Full-Stack MERN Developer',
+        'AI & Web Applications Engineer',
+        'BSc in CSE from AUST',
+        'IEEE Published AI Researcher',
       ],
     },
     bio: {
       type: String,
       default:
-        'Passionate full-stack software engineer specializing in modern React ecosystems, high-throughput Node.js microservices, and elegant MongoDB database architectures.',
+        'Software Engineer and Full-Stack MERN Developer with a BSc in Computer Science and Engineering from Ahsanullah University of Science and Technology (AUST). Experienced in crafting scalable web applications, integrating modern AI models (like GPT-4o mini and OpenRouter), building secure RESTful microservices, and conducting machine learning research with first-author IEEE publication.',
     },
     email: {
       type: String,
-      default: 'contact@example.com',
+      default: 'asadulislam.dev@gmail.com',
     },
     phone: {
       type: String,
-      default: '+1 (555) 234-5678',
+      default: '+880 1XXXXXXXXX',
     },
     location: {
       type: String,
-      default: 'San Francisco, CA (Open to Remote)',
+      default: 'Dhaka, Bangladesh',
     },
     yearsOfExperience: {
       type: Number,
-      default: 3,
+      default: 1,
     },
     completedProjects: {
       type: Number,
-      default: 25,
+      default: 12,
     },
     happyClients: {
       type: Number,
-      default: 18,
+      default: 8,
     },
     socialLinks: {
-      github: { type: String, default: 'https://github.com' },
-      linkedin: { type: String, default: 'https://linkedin.com' },
+      github: { type: String, default: 'https://github.com/Asadul09' },
+      linkedin: { type: String, default: 'https://linkedin.com/in/asadul09' },
       twitter: { type: String, default: 'https://x.com' },
+      portfolio: { type: String, default: 'https://portfolio-react-lac-eta.vercel.app' },
       resume: { type: String, default: '#' },
     },
+    researchPublications: [
+      {
+        title: String,
+        venue: String,
+        status: String,
+        summary: String,
+        tags: [String],
+        link: String,
+      },
+    ],
     experiences: [
       {
         role: String,

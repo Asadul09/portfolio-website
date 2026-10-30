@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Research from './components/Research';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -57,6 +58,7 @@ function PortfolioApp() {
         <About profile={profile} />
         <Skills skills={skills} />
         <Projects projects={projects} />
+        <Research profile={profile} />
         <Experience profile={profile} />
         <Contact profile={profile} health={health} />
       </main>

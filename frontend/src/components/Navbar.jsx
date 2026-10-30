@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon, Menu, X, Terminal, Database, Sparkles, Send } from 'lucide-react';
+import { Sun, Moon, Menu, X, Terminal, Database, Send } from 'lucide-react';
 
 export default function Navbar({ health, profile }) {
   const { isDark, toggleTheme } = useTheme();
@@ -19,6 +19,7 @@ export default function Navbar({ health, profile }) {
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Research', href: '#research' },
     { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -40,10 +41,10 @@ export default function Navbar({ health, profile }) {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-lg text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                {profile?.fullName || 'Portfolio'}
+                {profile?.fullName || 'MD Asadul Islam'}
               </span>
               <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400 tracking-wider uppercase mt-1">
-                MERN Stack Dev
+                Software Engineer · MERN
               </span>
             </div>
           </a>
@@ -54,7 +55,7 @@ export default function Navbar({ health, profile }) {
               <a
                 key={link.label}
                 href={link.href}
-                className="px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white rounded-full hover:bg-white dark:hover:bg-slate-800 transition-all duration-150"
+                className="px-3.5 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white rounded-full hover:bg-white dark:hover:bg-slate-800 transition-all duration-150"
               >
                 {link.label}
               </a>

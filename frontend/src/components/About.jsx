@@ -1,43 +1,43 @@
 import React from 'react';
-import { Award, Briefcase, Users, MapPin, Mail, Phone, CheckCircle2, ShieldCheck, Zap, Sparkles } from 'lucide-react';
+import { Award, Briefcase, Users, MapPin, Mail, Phone, CheckCircle2, ShieldCheck, Zap, Sparkles, GraduationCap, BrainCircuit } from 'lucide-react';
 
 export default function About({ profile }) {
   const stats = [
     {
-      label: 'Years Experience',
-      value: `${profile?.yearsOfExperience || 3}+`,
+      label: 'Years Dev Experience',
+      value: '1+',
       icon: Award,
       color: 'text-indigo-500',
     },
     {
-      label: 'Projects Completed',
-      value: `${profile?.completedProjects || 25}+`,
+      label: 'Projects Built',
+      value: '10+',
       icon: Briefcase,
       color: 'text-purple-500',
     },
     {
-      label: 'Happy Collaborators',
-      value: `${profile?.happyClients || 15}+`,
-      icon: Users,
+      label: 'IEEE Publication',
+      value: '1st Author',
+      icon: Sparkles,
       color: 'text-pink-500',
     },
   ];
 
   const highlights = [
     {
-      title: 'Full Stack Engineering',
-      desc: 'Expertise across the entire web cycle: from React frontend state management to Node/Express REST APIs and MongoDB query tuning.',
+      title: 'Full-Stack MERN Mastery',
+      desc: 'Building responsive React 19 web interfaces, scalable Node/Express RESTful APIs, JWT/Firebase security, and optimized MongoDB databases.',
       icon: Zap,
     },
     {
-      title: 'Security & Reliability',
-      desc: 'Implementing secure JWT authentication, input sanitation, rate limiting, and defensive architectural patterns.',
-      icon: ShieldCheck,
+      title: 'Applied AI & LLM Integration',
+      desc: 'Creator of VivaBot.AI (AI interview prep platform) integrating GPT-4o mini, OpenRouter, resume parsing, and automated scoring reports.',
+      icon: BrainCircuit,
     },
     {
-      title: 'Clean & Scalable Code',
-      desc: 'Committed to SOLID principles, maintainable folder structures, and high automated test coverage.',
-      icon: Sparkles,
+      title: 'Computer Science & Research',
+      desc: 'BSc in CSE from AUST with a first-author IEEE paper in Deep Learning/XAI and low-resource Bangla NLP contrastive learning research.',
+      icon: GraduationCap,
     },
   ];
 
@@ -50,7 +50,7 @@ export default function About({ profile }) {
             About Me
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-            Engineering seamless digital experiences with modern web technologies
+            Engineering Intelligent Web Solutions & Scalable Systems
           </h2>
         </div>
 
@@ -58,26 +58,22 @@ export default function About({ profile }) {
           {/* Left: Bio & Details */}
           <div className="lg:col-span-7 space-y-6">
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Hello! I'm a full-stack developer with a deep passion for the{' '}
-              <strong className="text-indigo-600 dark:text-indigo-400 font-semibold">
-                MERN stack (MongoDB, Express, React, Node.js)
-              </strong>
-              . I enjoy taking complex engineering challenges and turning them into intuitive, fast, and accessible digital products.
+              Hello! I'm <strong className="text-indigo-600 dark:text-indigo-400 font-semibold">{profile?.fullName || 'MD Asadul Islam'}</strong>, a Software Engineer and Full-Stack MERN Developer based in Dhaka, Bangladesh, with a BSc in Computer Science and Engineering from <strong className="text-slate-900 dark:text-white font-semibold">Ahsanullah University of Science and Technology (AUST)</strong>.
             </p>
 
             <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-              Whether building custom dashboard interfaces, high-throughput microservices, or full e-commerce architectures, I believe in writing code that is clean, well-documented, and built to scale with growing user demand.
+              I specialize in developing production-grade web applications with modern React ecosystems, Node.js microservices, and MongoDB. My engineering journey bridges full-stack craftsmanship with applied AI — having built <strong className="text-indigo-600 dark:text-indigo-400 font-semibold">VivaBot.AI</strong> (an AI-powered interview prep platform) and published a first-author <strong className="text-purple-600 dark:text-purple-400 font-semibold">IEEE research paper</strong> on medical deep learning with Explainable AI.
             </p>
 
             {/* Quick Contact Chips */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               <div className="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300">
                 <MapPin className="w-4 h-4 text-indigo-500 shrink-0" />
-                <span>{profile?.location || 'San Francisco, CA / Remote'}</span>
+                <span>{profile?.location || 'Dhaka, Bangladesh'}</span>
               </div>
               <div className="flex items-center gap-2.5 text-sm text-slate-700 dark:text-slate-300">
-                <Mail className="w-4 h-4 text-indigo-500 shrink-0" />
-                <span>{profile?.email || 'contact@example.com'}</span>
+                <GraduationCap className="w-4 h-4 text-indigo-500 shrink-0" />
+                <span>BSc in CSE, AUST (2021 - 2025)</span>
               </div>
             </div>
 
@@ -91,7 +87,7 @@ export default function About({ profile }) {
                     className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center space-y-1 hover:border-indigo-500/50 transition-colors"
                   >
                     <Icon className={`w-5 h-5 mx-auto mb-1 ${stat.color}`} />
-                    <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                    <div className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
                       {stat.value}
                     </div>
                     <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">

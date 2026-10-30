@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, Heart, Terminal, Database, Code2 } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function Footer({ profile }) {
   const scrollToTop = () => {
@@ -17,19 +18,36 @@ export default function Footer({ profile }) {
             </div>
             <div>
               <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                {profile?.fullName || 'Alex Rivera'}
+                MD Asadul Islam
               </p>
               <p className="text-xs text-slate-500">
-                Engineered with MongoDB, Express, React & Node.js
+                Software Engineer · Full-Stack MERN Developer · Dhaka, Bangladesh
               </p>
             </div>
           </div>
 
-          {/* Center text */}
-          <div className="text-xs text-slate-500 flex items-center gap-1">
-            <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
-            <span>& clean code architecture</span>
+          {/* Socials & Center text */}
+          <div className="flex items-center gap-4 text-xs text-slate-500">
+            <a
+              href="https://github.com/Asadul09"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+            <a
+              href="https://vivabot-lake.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+            >
+              VivaBot.AI
+            </a>
+            <span>•</span>
+            <span className="flex items-center gap-1">
+              Built with MERN & <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
+            </span>
           </div>
 
           {/* Back to top */}
