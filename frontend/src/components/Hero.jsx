@@ -34,17 +34,18 @@ export default function Hero({ profile }) {
   }, [taglines.length]);
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-grid-pattern">
-      {/* Background radial gradient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-purple-500/20 via-indigo-500/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-grid-pattern transition-colors duration-300">
+      {/* Dynamic Animated background radial gradient glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-purple-500/25 via-indigo-500/15 to-transparent rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
+      <div className="absolute top-1/3 right-10 w-80 h-80 bg-pink-500/15 rounded-full blur-3xl pointer-events-none animate-float-reverse" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Text & CTA */}
           <div className="lg:col-span-7 text-center lg:text-left space-y-6">
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-purple-500 animate-ping" />
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-purple-500/10 dark:bg-purple-950/60 border border-purple-500/30 text-purple-700 dark:text-purple-300 text-xs font-bold shadow-sm hover:scale-105 transition-transform duration-200 cursor-default">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <span>Available for AI Engineering & Full-Stack Roles</span>
             </div>
 
@@ -52,14 +53,14 @@ export default function Hero({ profile }) {
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
                 Hi, I'm{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-500 hover:brightness-110 transition-all">
                   {profile?.fullName || 'MD Asadul Islam'}
                 </span>
               </h1>
               <div className="h-10 sm:h-12 flex items-center justify-center lg:justify-start">
-                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-700 dark:text-slate-300">
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-700 dark:text-slate-200">
                   I craft{' '}
-                  <span className="text-purple-600 dark:text-purple-400 border-b-2 border-purple-500 pb-0.5 transition-all">
+                  <span className="text-purple-600 dark:text-purple-400 border-b-2 border-purple-500 pb-0.5 transition-all duration-500 inline-block animate-pulse">
                     {taglines[taglineIndex]}
                   </span>
                 </span>
@@ -71,62 +72,62 @@ export default function Hero({ profile }) {
               AI Developer & Software Engineer with a BSc in CSE from AUST. I architect intelligent AI applications, orchestrate LLMs (GPT-4o mini / OpenRouter), conduct deep learning research (First Author IEEE XAI), and ship production-grade full-stack web platforms.
             </p>
 
-            {/* AI + Full Stack Badges */}
-            <div className="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-semibold">
-              <span className="px-3 py-1.5 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 flex items-center gap-1.5">
-                <BrainCircuit className="w-3.5 h-3.5" /> LLMs & Generative AI
+            {/* AI + Full Stack Badges with hover animations */}
+            <div className="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-bold">
+              <span className="px-3 py-1.5 rounded-xl bg-purple-500/10 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-500/20 flex items-center gap-1.5 hover:scale-105 hover:bg-purple-500/20 transition-all duration-200">
+                <BrainCircuit className="w-3.5 h-3.5 text-purple-500" /> LLMs & Generative AI
               </span>
-              <span className="px-3 py-1.5 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 flex items-center gap-1.5">
-                <Cpu className="w-3.5 h-3.5" /> Deep Learning & PyTorch
+              <span className="px-3 py-1.5 rounded-xl bg-pink-500/10 dark:bg-pink-950/60 text-pink-700 dark:text-pink-300 border border-pink-500/20 flex items-center gap-1.5 hover:scale-105 hover:bg-pink-500/20 transition-all duration-200">
+                <Cpu className="w-3.5 h-3.5 text-pink-500" /> Deep Learning & PyTorch
               </span>
-              <span className="px-3 py-1.5 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 flex items-center gap-1.5">
-                <Code2 className="w-3.5 h-3.5" /> React 19 Frontend
+              <span className="px-3 py-1.5 rounded-xl bg-cyan-500/10 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20 flex items-center gap-1.5 hover:scale-105 hover:bg-cyan-500/20 transition-all duration-200">
+                <Code2 className="w-3.5 h-3.5 text-cyan-500" /> React 19 Frontend
               </span>
-              <span className="px-3 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
-                <Terminal className="w-3.5 h-3.5" /> Node.js & Express
+              <span className="px-3 py-1.5 rounded-xl bg-emerald-500/10 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 flex items-center gap-1.5 hover:scale-105 hover:bg-emerald-500/20 transition-all duration-200">
+                <Terminal className="w-3.5 h-3.5 text-emerald-500" /> Node.js & Express
               </span>
-              <span className="px-3 py-1.5 rounded-xl bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 flex items-center gap-1.5">
-                <Database className="w-3.5 h-3.5" /> MongoDB Atlas
+              <span className="px-3 py-1.5 rounded-xl bg-green-500/10 dark:bg-green-950/60 text-green-700 dark:text-green-300 border border-green-500/20 flex items-center gap-1.5 hover:scale-105 hover:bg-green-500/20 transition-all duration-200">
+                <Database className="w-3.5 h-3.5 text-green-500" /> MongoDB Atlas
               </span>
             </div>
 
-            {/* CTA Action Buttons */}
+            {/* CTA Action Buttons with rich interactive hover */}
             <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg shadow-purple-600/30 hover:shadow-purple-600/40 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 cursor-pointer"
               >
                 <span>Explore AI Projects</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
               <a
                 href="https://vivabot-lake.vercel.app"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-bold text-purple-600 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/70 border border-purple-300 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900/60 shadow-sm transition-all text-sm group"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/70 border border-purple-300 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900/60 shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md text-sm group"
               >
-                <Bot className="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform" />
+                <Bot className="w-4 h-4 text-purple-500 group-hover:scale-125 transition-transform duration-300" />
                 <span>Live VivaBot.AI Demo</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
               </a>
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700 transition-all text-sm cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-slate-800 dark:text-slate-200 bg-white hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-800 shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 text-sm cursor-pointer"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                 <span>Hire Me</span>
               </a>
             </div>
 
-            {/* Social Icons */}
+            {/* Social Icons with springy hover */}
             <div className="pt-4 flex items-center justify-center lg:justify-start gap-3">
               <a
                 href="https://github.com/Asadul09"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-110 transition-all"
+                className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-115 hover:rotate-6 shadow-sm hover:shadow-md transition-all duration-300"
                 aria-label="GitHub Profile"
               >
                 <GithubIcon className="w-5 h-5" />
@@ -135,14 +136,14 @@ export default function Hero({ profile }) {
                 href={profile?.socialLinks?.linkedin || 'https://www.linkedin.com/in/a-j-asad-408839270/'}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-110 transition-all"
+                className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-115 hover:-rotate-6 shadow-sm hover:shadow-md transition-all duration-300"
                 aria-label="LinkedIn Profile"
               >
                 <LinkedinIcon className="w-5 h-5" />
               </a>
               <a
                 href={`mailto:${profile?.email || 'asadut486@gmail.com'}`}
-                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-110 transition-all"
+                className="p-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-115 hover:rotate-6 shadow-sm hover:shadow-md transition-all duration-300"
                 aria-label="Direct Email"
               >
                 <Mail className="w-5 h-5" />
@@ -150,23 +151,24 @@ export default function Hero({ profile }) {
             </div>
           </div>
 
-          {/* Right Column: AI Architecture Terminal Card */}
+          {/* Right Column: AI Architecture Terminal Card with floating motion */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-md">
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl blur-lg opacity-35 group-hover:opacity-100 transition duration-1000" />
+            <div className="relative w-full max-w-md animate-float">
+              {/* Outer glowing border aura */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-3xl blur-xl opacity-35 group-hover:opacity-100 transition duration-1000" />
 
-              <div className="relative bg-slate-900 text-slate-200 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden font-mono text-xs sm:text-sm">
+              <div className="relative bg-slate-900 text-slate-200 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden font-mono text-xs sm:text-sm hover:border-purple-500/50 transition-all duration-300">
                 {/* Window header */}
-                <div className="bg-slate-950/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                <div className="bg-slate-950/95 px-4 py-3.5 border-b border-slate-800 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-rose-500 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-amber-500 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-rose-500 inline-block hover:scale-110 transition-transform cursor-pointer" />
+                    <span className="w-3 h-3 rounded-full bg-amber-500 inline-block hover:scale-110 transition-transform cursor-pointer" />
+                    <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block hover:scale-110 transition-transform cursor-pointer" />
                   </div>
-                  <span className="text-slate-400 text-xs flex items-center gap-1 font-sans">
-                    <Sparkles className="w-3.5 h-3.5 text-purple-400" /> aiDeveloper.config.ts
+                  <span className="text-slate-400 text-xs flex items-center gap-1.5 font-sans font-medium">
+                    <Sparkles className="w-3.5 h-3.5 text-purple-400 animate-spin" style={{ animationDuration: '8s' }} /> asadul.ai.config.ts
                   </span>
-                  <div className="w-10" />
+                  <div className="w-8" />
                 </div>
 
                 {/* Code body */}
