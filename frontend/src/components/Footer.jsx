@@ -37,12 +37,13 @@ export default function Footer({ profile }) {
               <GithubIcon className="w-4 h-4" />
             </a>
             <a
-              href="https://vivabot-lake.vercel.app"
+              href={profile?.socialLinks?.linkedin || "https://www.linkedin.com/in/a-j-asad-408839270/"}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+              className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              aria-label="LinkedIn Profile"
             >
-              VivaBot.AI
+              <LinkedinIcon className="w-4 h-4" />
             </a>
             <span>•</span>
             <span className="flex items-center gap-1">

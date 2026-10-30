@@ -51,7 +51,7 @@ const profileSchema = new mongoose.Schema(
     },
     socialLinks: {
       github: { type: String, default: 'https://github.com/Asadul09' },
-      linkedin: { type: String, default: 'https://linkedin.com/in/asadul09' },
+      linkedin: { type: String, default: 'https://www.linkedin.com/in/a-j-asad-408839270/' },
       twitter: { type: String, default: 'https://x.com' },
       portfolio: { type: String, default: 'https://portfolio-react-lac-eta.vercel.app' },
       resume: { type: String, default: '#' },

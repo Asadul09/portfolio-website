@@ -132,7 +132,7 @@ export default function Hero({ profile }) {
                 <GithubIcon className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/in/asadul09"
+                href={profile?.socialLinks?.linkedin || 'https://www.linkedin.com/in/a-j-asad-408839270/'}
                 target="_blank"
                 rel="noreferrer"
                 className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-110 transition-all"
