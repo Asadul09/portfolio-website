@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon, Menu, X, Sparkles, Database, Send, BrainCircuit } from 'lucide-react';
+import { Sun, Moon, Menu, X, Sparkles, Database, Send, BrainCircuit, Download, FileText } from 'lucide-react';
 
 export default function Navbar({ health, profile }) {
   const { isDark, toggleTheme } = useTheme();
@@ -91,6 +91,15 @@ export default function Navbar({ health, profile }) {
 
             {/* Hire Me Button */}
             <a
+              href="/MD_Asadul_Islam_CV.pdf"
+              download="MD_Asadul_Islam_CV.pdf"
+              title="Download Resume / CV"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 shadow-sm transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Resume</span>
+            </a>
+            <a
               href="#contact"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-md shadow-purple-600/25 hover:shadow-purple-600/40 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
             >
@@ -133,15 +142,24 @@ export default function Navbar({ health, profile }) {
               </a>
             ))}
           </div>
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
-            <span className="text-xs font-bold text-purple-600 dark:text-purple-400">AI & Full-Stack Engineer</span>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-4 py-2 rounded-lg text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600"
-            >
-              Get in Touch
-            </a>
+          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+            <span className="text-xs font-bold text-purple-600 dark:text-purple-400">AI &amp; Full-Stack Engineer</span>
+            <div className="flex items-center gap-2">
+              <a
+                href="/MD_Asadul_Islam_CV.pdf"
+                download="MD_Asadul_Islam_CV.pdf"
+                className="px-3 py-1.5 rounded-lg text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 flex items-center gap-1"
+              >
+                <Download className="w-3 h-3" /> Resume
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-4 py-2 rounded-lg text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600"
+              >
+                Get in Touch
+              </a>
+            </div>
           </div>
         </div>
       )}

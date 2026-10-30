@@ -183,12 +183,6 @@ export default function About({ profile }) {
               <span className="px-3.5 py-1.5 rounded-xl bg-indigo-500/10 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20 flex items-center gap-1.5 hover:scale-105 hover:bg-indigo-500/20 transition-all duration-200">
                 <GraduationCap className="w-3.5 h-3.5 text-indigo-500" /> BSc in CSE, AUST (2021-2025)
               </span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-emerald-500/10 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 flex items-center gap-1.5 hover:scale-105 hover:bg-emerald-500/20 transition-all duration-200">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> SSC & HSC: GPA 5.00 / 5.00
-              </span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-pink-500/10 dark:bg-pink-950/60 text-pink-700 dark:text-pink-300 border border-pink-500/20 flex items-center gap-1.5 hover:scale-105 hover:bg-pink-500/20 transition-all duration-200">
-                <Sparkles className="w-3.5 h-3.5 text-pink-500" /> IELTS 6.5
-              </span>
             </div>
 
             {/* Location & Contact Bar */}

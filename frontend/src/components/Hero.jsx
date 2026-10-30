@@ -12,11 +12,72 @@ import {
   BrainCircuit,
   Cpu,
   Bot,
+  FileText,
+  X,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
+/* ── CV Viewer Modal ─────────────────────────────────────── */
+function CVModal({ onClose }) {
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose();
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/75 backdrop-blur-sm animate-fade-in" />
+
+      {/* Modal panel */}
+      <div
+        className="relative w-full max-w-4xl h-[90vh] bg-white dark:bg-slate-950 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden animate-slide-up"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header bar */}
+        <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/80">
+          <div className="flex items-center gap-2.5">
+            <FileText className="w-4 h-4 text-purple-500" />
+            <span className="text-sm font-bold text-slate-800 dark:text-slate-200">
+              MD Asadul Islam — Curriculum Vitae
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <a
+              href="/MD_Asadul_Islam_CV.pdf"
+              download="MD_Asadul_Islam_CV.pdf"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-200"
+            >
+              <Download className="w-3.5 h-3.5" /> Download
+            </a>
+            <button
+              onClick={onClose}
+              className="p-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-200"
+              aria-label="Close CV viewer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* PDF embed */}
+        <iframe
+          src="/MD_Asadul_Islam_CV.pdf#toolbar=0"
+          title="MD Asadul Islam CV"
+          className="flex-1 w-full border-none"
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function Hero({ profile }) {
   const [taglineIndex, setTaglineIndex] = useState(0);
+  const [cvOpen, setCvOpen] = useState(false);
 
   const taglines = [
     'Full-Stack AI Developer',
@@ -35,6 +96,7 @@ export default function Hero({ profile }) {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-grid-pattern transition-colors duration-300">
+      {cvOpen && <CVModal onClose={() => setCvOpen(false)} />}
       {/* Dynamic Animated background radial gradient glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-purple-500/25 via-indigo-500/15 to-transparent rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
       <div className="absolute top-1/3 right-10 w-80 h-80 bg-pink-500/15 rounded-full blur-3xl pointer-events-none animate-float-reverse" />
@@ -92,7 +154,7 @@ export default function Hero({ profile }) {
             </div>
 
             {/* CTA Action Buttons with rich interactive hover */}
-            <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3">
               <a
                 href="#projects"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 cursor-pointer"
@@ -101,16 +163,24 @@ export default function Hero({ profile }) {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
+              {/* Download CV */}
               <a
-                href="https://vivabot-lake.vercel.app"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/70 border border-purple-300 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900/60 shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md text-sm group"
+                href="/MD_Asadul_Islam_CV.pdf"
+                download="MD_Asadul_Islam_CV.pdf"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md text-sm group"
               >
-                <Bot className="w-4 h-4 text-purple-500 group-hover:scale-125 transition-transform duration-300" />
-                <span>Live VivaBot.AI Demo</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 transition-opacity" />
+                <Download className="w-4 h-4 text-emerald-500 group-hover:animate-bounce" />
+                <span>Download CV</span>
               </a>
+
+              {/* View CV (inline modal) */}
+              <button
+                onClick={() => setCvOpen(true)}
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/70 border border-purple-300 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900/60 shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-md text-sm group cursor-pointer"
+              >
+                <FileText className="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform" />
+                <span>View CV</span>
+              </button>
 
               <a
                 href="#contact"

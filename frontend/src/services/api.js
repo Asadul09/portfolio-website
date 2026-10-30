@@ -72,18 +72,6 @@ export const fallbackProfile = {
       period: 'December 2021 - December 2025',
       details: 'Graduated in CSE. Coursework: Artificial Intelligence, Machine Learning, Data Structures, Algorithms, Software Engineering, Database Systems, Computer Networks.',
     },
-    {
-      degree: 'Higher Secondary Certificate (HSC)',
-      institution: 'Science Division',
-      period: 'Graduated',
-      details: 'GPA: 5.00 / 5.00 in Science stream with top academic honors.',
-    },
-    {
-      degree: 'Secondary School Certificate (SSC)',
-      institution: 'Science Division',
-      period: 'Graduated',
-      details: 'GPA: 5.00 / 5.00 with perfect grade record.',
-    },
   ],
 };
 
