@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ExternalLink, Sparkles } from 'lucide-react';
+import { ExternalLink, Sparkles, BrainCircuit } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function Projects({ projects }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
+  const categories = ['All', 'AI & Machine Learning', 'Full Stack', 'Frontend', 'Backend'];
 
   const filteredProjects =
     selectedCategory === 'All'
@@ -19,14 +19,14 @@ export default function Projects({ projects }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">
-            Featured Work
+          <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800">
+            Featured Systems
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-            Projects & Case Studies
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            AI Applications & Engineering Projects
           </h2>
           <p className="text-base text-slate-600 dark:text-slate-400">
-            A curated collection of full-stack web applications, REST services, and user interfaces powered by the MERN stack.
+            A portfolio of production LLM platforms, deep learning research implementations, and scalable full-stack web solutions.
           </p>
         </div>
 
@@ -36,9 +36,9 @@ export default function Projects({ projects }) {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 selectedCategory === cat
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
+                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30'
                   : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -52,7 +52,7 @@ export default function Projects({ projects }) {
           {filteredProjects.map((project, idx) => (
             <div
               key={project._id || idx}
-              className="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-indigo-500/50 transition-all flex flex-col group"
+              className="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-purple-500/50 transition-all flex flex-col group"
             >
               {/* Image Preview Container */}
               <div className="relative aspect-video overflow-hidden bg-slate-950">
@@ -69,12 +69,13 @@ export default function Projects({ projects }) {
 
                 {/* Category & Featured Badge */}
                 <div className="absolute top-3 left-3 flex gap-2">
-                  <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-slate-900/80 text-white backdrop-blur-md border border-white/10">
+                  <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-slate-900/85 text-white backdrop-blur-md border border-white/10 flex items-center gap-1">
+                    {project.category.includes('AI') && <BrainCircuit className="w-3 h-3 text-purple-400" />}
                     {project.category}
                   </span>
                   {project.featured && (
-                    <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500 text-slate-950 flex items-center gap-1 shadow-sm">
-                      <Sparkles className="w-3 h-3" /> Featured
+                    <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-gradient-to-r from-amber-500 to-pink-500 text-white flex items-center gap-1 shadow-sm">
+                      <Sparkles className="w-3 h-3" /> Flagship
                     </span>
                   )}
                 </div>
@@ -83,7 +84,7 @@ export default function Projects({ projects }) {
               {/* Card Content */}
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
@@ -111,7 +112,7 @@ export default function Projects({ projects }) {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline"
                       >
                         <ExternalLink className="w-3.5 h-3.5" /> Live Demo
                       </a>

@@ -1,14 +1,14 @@
 export const seedProfile = {
   fullName: 'MD Asadul Islam',
-  roleTitle: 'Software Engineer · Full-Stack MERN Developer',
+  roleTitle: 'Full-Stack AI Developer & Software Engineer',
   taglines: [
-    'Full-Stack MERN Developer',
-    'AI & Web Applications Engineer',
-    'BSc in CSE from AUST',
+    'Full-Stack AI Developer',
+    'LLM & Agentic Systems Engineer',
+    'AI-Powered Web Applications',
     'IEEE Published AI Researcher',
-    'React & Node.js Specialist',
+    'Creator of VivaBot.AI',
   ],
-  bio: 'Software Engineer and Full-Stack MERN Developer with a BSc in Computer Science and Engineering from Ahsanullah University of Science and Technology (AUST). Experienced in crafting scalable web applications, integrating modern AI models (like GPT-4o mini and OpenRouter), building secure RESTful microservices, and conducting machine learning research with first-author IEEE publication.',
+  bio: 'Software Engineer and AI Developer with a BSc in Computer Science and Engineering from Ahsanullah University of Science and Technology (AUST). Experienced in architecting intelligent applications, integrating modern foundation models (GPT-4o mini, OpenRouter, Claude), building high-throughput MERN platforms, and conducting machine learning research with first-author IEEE publication.',
   email: 'asadulislam.dev@gmail.com',
   phone: '+880 1XXXXXXXXX',
   location: 'Dhaka, Bangladesh',
@@ -53,13 +53,13 @@ export const seedProfile = {
       technologies: ['Power BI', 'Excel Advanced', 'CRM Analytics', 'Data Modeling', 'KPI Tracking'],
     },
     {
-      role: 'Full-Stack MERN Developer',
+      role: 'Full-Stack AI Developer',
       company: 'Independent & Academic Projects',
       period: 'December 2021 - Present',
       location: 'Dhaka, Bangladesh',
       description:
-        'Architected end-to-end web applications including VivaBot.AI (AI interview preparation platform) and healthcare management portals. Built secure REST APIs, implemented JWT and Firebase authentication, and designed responsive Tailwind CSS interfaces.',
-      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST APIs', 'Tailwind CSS'],
+        'Architected end-to-end intelligent applications including VivaBot.AI (AI interview preparation platform) and healthcare management portals. Built secure REST APIs, implemented JWT and Firebase authentication, and designed responsive Tailwind CSS interfaces.',
+      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'OpenRouter', 'GPT-4o mini', 'Tailwind CSS'],
     },
   ],
   education: [
@@ -67,7 +67,7 @@ export const seedProfile = {
       degree: 'BSc in Computer Science and Engineering (CSE)',
       institution: 'Ahsanullah University of Science and Technology (AUST)',
       period: 'December 2021 - December 2025',
-      details: 'Graduated in CSE. Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Computer Networks, and Machine Learning.',
+      details: 'Graduated in CSE. Coursework: Artificial Intelligence, Machine Learning, Data Structures, Algorithms, Software Engineering, Database Systems, Computer Networks.',
     },
     {
       degree: 'Higher Secondary Certificate (HSC)',
@@ -87,7 +87,7 @@ export const seedProfile = {
 export const seedProjects = [
   {
     title: 'VivaBot.AI - AI Interview Prep Platform',
-    category: 'Full Stack',
+    category: 'AI & Machine Learning',
     description:
       'A comprehensive AI-powered interview preparation ecosystem. Features real-time AI interview question generation, intelligent resume analysis, simulated live interview sessions, automated scoring & detailed feedback, downloadable PDF performance reports, and user credit balance system.',
     tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'OpenRouter', 'GPT-4o mini', 'Tailwind CSS'],
@@ -98,6 +98,30 @@ export const seedProjects = [
     order: 1,
   },
   {
+    title: 'LC Cancer Classification with XAI (IEEE Research)',
+    category: 'AI & Machine Learning',
+    description:
+      'First-author research application for automated histopathological cancer classification using lightweight ShuffleNetV2 and TDO-optimized Gaussian Naive Bayes, backed by Explainable AI heatmaps for diagnostic validation.',
+    tags: ['Python', 'PyTorch', 'ShuffleNetV2', 'Explainable AI', 'IEEE', 'OpenCV'],
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
+    liveUrl: 'https://github.com/Asadul09',
+    githubUrl: 'https://github.com/Asadul09',
+    featured: true,
+    order: 2,
+  },
+  {
+    title: 'Bangla Intent Detection & NLP Framework',
+    category: 'AI & Machine Learning',
+    description:
+      'Natural Language Processing pipeline evaluating intent detection on low-resource Bangla and code-mixed Bangla-English text using mBERT and XLM-RoBERTa with contrastive learning (~88.4% accuracy).',
+    tags: ['Python', 'XLM-RoBERTa', 'mBERT', 'PyTorch', 'Transformers', 'NLP'],
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    liveUrl: 'https://github.com/Asadul09',
+    githubUrl: 'https://github.com/Asadul09',
+    featured: true,
+    order: 3,
+  },
+  {
     title: 'Better Life Hospital Management System',
     category: 'Full Stack',
     description:
@@ -106,8 +130,8 @@ export const seedProjects = [
     image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://github.com/Asadul09/Better-Life-Hospital',
     githubUrl: 'https://github.com/Asadul09/Better-Life-Hospital',
-    featured: true,
-    order: 2,
+    featured: false,
+    order: 4,
   },
   {
     title: 'Smart IoT Healthcare Monitoring System',
@@ -118,20 +142,8 @@ export const seedProjects = [
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://github.com/Asadul09',
     githubUrl: 'https://github.com/Asadul09',
-    featured: true,
-    order: 3,
-  },
-  {
-    title: 'LC Cancer Classification with XAI (IEEE Research)',
-    category: 'Full Stack',
-    description:
-      'First-author research application for automated histopathological cancer classification using lightweight ShuffleNetV2 and TDO-optimized Gaussian Naive Bayes, backed by Explainable AI heatmaps for diagnostic validation.',
-    tags: ['Python', 'PyTorch', 'ShuffleNetV2', 'Explainable AI', 'IEEE', 'OpenCV'],
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
-    liveUrl: 'https://github.com/Asadul09',
-    githubUrl: 'https://github.com/Asadul09',
-    featured: true,
-    order: 4,
+    featured: false,
+    order: 5,
   },
   {
     title: 'TV Room 3D - Architectural Visualization',
@@ -143,7 +155,7 @@ export const seedProjects = [
     liveUrl: 'https://github.com/Asadul09/tv-room-3d',
     githubUrl: 'https://github.com/Asadul09/tv-room-3d',
     featured: false,
-    order: 5,
+    order: 6,
   },
   {
     title: 'Live Weather Forecasting Application',
@@ -155,7 +167,7 @@ export const seedProjects = [
     liveUrl: 'https://github.com/Asadul09/weather-app',
     githubUrl: 'https://github.com/Asadul09/weather-app',
     featured: false,
-    order: 6,
+    order: 7,
   },
   {
     title: 'Automated RFID Toll Collection System',
@@ -167,52 +179,37 @@ export const seedProjects = [
     liveUrl: 'https://github.com/Asadul09',
     githubUrl: 'https://github.com/Asadul09',
     featured: false,
-    order: 7,
-  },
-  {
-    title: 'Bangla Intent Detection & NLP Framework',
-    category: 'Backend',
-    description:
-      'Natural Language Processing pipeline evaluating intent detection on low-resource Bangla and code-mixed Bangla-English text using mBERT and XLM-RoBERTa with contrastive learning (~88.4% accuracy).',
-    tags: ['Python', 'XLM-RoBERTa', 'mBERT', 'PyTorch', 'Transformers', 'NLP'],
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
-    liveUrl: 'https://github.com/Asadul09',
-    githubUrl: 'https://github.com/Asadul09',
-    featured: false,
     order: 8,
   },
 ];
 
 export const seedSkills = [
+  // AI & Machine Learning
+  { name: 'LLMs & Prompt Engineering (GPT-4o, OpenRouter)', category: 'AI & Machine Learning', proficiency: 94, iconName: 'BrainCircuit', featured: true },
+  { name: 'Deep Learning & PyTorch', category: 'AI & Machine Learning', proficiency: 88, iconName: 'Cpu', featured: true },
+  { name: 'Explainable AI (XAI) & ShuffleNetV2', category: 'AI & Machine Learning', proficiency: 90, iconName: 'Sparkles', featured: true },
+  { name: 'NLP & Transformers (mBERT, XLM-R)', category: 'AI & Machine Learning', proficiency: 86, iconName: 'Bot', featured: true },
+  { name: 'Python (ML, Data Science, AI APIs)', category: 'AI & Machine Learning', proficiency: 92, iconName: 'Terminal', featured: true },
+
   // Frontend
-  { name: 'React.js', category: 'Frontend', proficiency: 92, iconName: 'Atom', featured: true },
-  { name: 'JavaScript (ES6+)', category: 'Frontend', proficiency: 95, iconName: 'FileCode2', featured: true },
-  { name: 'TypeScript', category: 'Frontend', proficiency: 85, iconName: 'FileCode', featured: true },
-  { name: 'Tailwind CSS', category: 'Frontend', proficiency: 92, iconName: 'Palette', featured: true },
-  { name: 'HTML5 & CSS3', category: 'Frontend', proficiency: 95, iconName: 'Layout', featured: false },
-  { name: 'Bootstrap', category: 'Frontend', proficiency: 88, iconName: 'Palette', featured: false },
+  { name: 'React.js 19 & Vite', category: 'Frontend', proficiency: 92, iconName: 'Atom', featured: true },
+  { name: 'JavaScript (ES6+) & TypeScript', category: 'Frontend', proficiency: 94, iconName: 'FileCode2', featured: true },
+  { name: 'Tailwind CSS & Modern UI', category: 'Frontend', proficiency: 92, iconName: 'Palette', featured: true },
+  { name: 'HTML5 & Modern CSS', category: 'Frontend', proficiency: 95, iconName: 'Layout', featured: false },
 
   // Backend
-  { name: 'Node.js', category: 'Backend', proficiency: 90, iconName: 'Server', featured: true },
-  { name: 'Express.js', category: 'Backend', proficiency: 90, iconName: 'Layers', featured: true },
-  { name: 'RESTful API Architecture', category: 'Backend', proficiency: 92, iconName: 'Network', featured: true },
-  { name: 'JWT & Authentication', category: 'Backend', proficiency: 88, iconName: 'KeyRound', featured: true },
-  { name: 'Firebase Authentication', category: 'Backend', proficiency: 84, iconName: 'Zap', featured: false },
-  { name: 'PHP & C# Basics', category: 'Backend', proficiency: 76, iconName: 'Terminal', featured: false },
+  { name: 'Node.js & Express.js', category: 'Backend', proficiency: 90, iconName: 'Server', featured: true },
+  { name: 'RESTful API & Microservices', category: 'Backend', proficiency: 92, iconName: 'Layers', featured: true },
+  { name: 'JWT & Firebase Authentication', category: 'Backend', proficiency: 88, iconName: 'KeyRound', featured: false },
+  { name: 'WebSockets & Telemetry', category: 'Backend', proficiency: 82, iconName: 'Network', featured: false },
 
   // Database
-  { name: 'MongoDB & Atlas', category: 'Database', proficiency: 90, iconName: 'Database', featured: true },
-  { name: 'Mongoose ODM', category: 'Database', proficiency: 92, iconName: 'Binary', featured: true },
+  { name: 'MongoDB & Atlas (Mongoose)', category: 'Database', proficiency: 90, iconName: 'Database', featured: true },
   { name: 'SQL & Relational DBs', category: 'Database', proficiency: 82, iconName: 'Table', featured: false },
 
-  // AI & Data Analytics
-  { name: 'Python (ML / NLP)', category: 'Tools & DevOps', proficiency: 86, iconName: 'Terminal', featured: true },
-  { name: 'Power BI & Excel Dashboards', category: 'Tools & DevOps', proficiency: 88, iconName: 'Layout', featured: true },
-  { name: 'AI API Integration (OpenRouter/GPT)', category: 'Tools & DevOps', proficiency: 90, iconName: 'Zap', featured: true },
-
-  // Tools & DevOps
-  { name: 'Git & GitHub', category: 'Tools & DevOps', proficiency: 92, iconName: 'GitBranch', featured: true },
-  { name: 'Postman (API Testing)', category: 'Tools & DevOps', proficiency: 90, iconName: 'Terminal', featured: false },
-  { name: 'Vite & Build Tools', category: 'Tools & DevOps', proficiency: 88, iconName: 'Boxes', featured: false },
-  { name: 'Figma & UI Prototyping', category: 'Tools & DevOps', proficiency: 80, iconName: 'Palette', featured: false },
+  // Tools & Analytics
+  { name: 'Power BI & Executive KPI Dashboards', category: 'Tools & Analytics', proficiency: 88, iconName: 'TrendingUp', featured: true },
+  { name: 'Git & GitHub Project Management', category: 'Tools & Analytics', proficiency: 92, iconName: 'GitBranch', featured: true },
+  { name: 'Postman & API Diagnostics', category: 'Tools & Analytics', proficiency: 90, iconName: 'Terminal', featured: false },
+  { name: 'Excel Advanced Analytics', category: 'Tools & Analytics', proficiency: 88, iconName: 'Layout', featured: false },
 ];
