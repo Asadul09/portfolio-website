@@ -141,7 +141,7 @@ export default function Hero({ profile }) {
                 <LinkedinIcon className="w-5 h-5" />
               </a>
               <a
-                href="mailto:asadulislam.dev@gmail.com"
+                href={`mailto:${profile?.email || 'asadut486@gmail.com'}`}
                 className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:scale-110 transition-all"
                 aria-label="Direct Email"
               >

@@ -102,10 +102,10 @@ export default function Contact({ profile, health }) {
                       Email
                     </h4>
                     <a
-                      href={`mailto:${profile?.email || 'alex.rivera.dev@gmail.com'}`}
+                      href={`mailto:${profile?.email || 'asadut486@gmail.com'}`}
                       className="text-sm font-semibold text-slate-900 dark:text-white hover:text-indigo-600 transition-colors"
                     >
-                      {profile?.email || 'alex.rivera.dev@gmail.com'}
+                      {profile?.email || 'asadut486@gmail.com'}
                     </a>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function Contact({ profile, health }) {
                       Location
                     </h4>
                     <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                      {profile?.location || 'San Francisco, CA (Open to Remote)'}
+                      {profile?.location || 'Dhaka, Bangladesh'}
                     </p>
                   </div>
                 </div>

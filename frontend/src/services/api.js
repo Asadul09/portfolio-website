@@ -12,7 +12,7 @@ export const fallbackProfile = {
     'Creator of VivaBot.AI',
   ],
   bio: 'Software Engineer and AI Developer with a BSc in Computer Science and Engineering from Ahsanullah University of Science and Technology (AUST). Experienced in architecting intelligent applications, integrating modern foundation models (GPT-4o mini, OpenRouter, Claude), building high-throughput MERN platforms, and conducting machine learning research with first-author IEEE publication.',
-  email: 'asadulislam.dev@gmail.com',
+  email: 'asadut486@gmail.com',
   phone: '+880 1XXXXXXXXX',
   location: 'Dhaka, Bangladesh',
   yearsOfExperience: 1,

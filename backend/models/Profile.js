@@ -27,7 +27,7 @@ const profileSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      default: 'asadulislam.dev@gmail.com',
+      default: 'asadut486@gmail.com',
     },
     phone: {
       type: String,
