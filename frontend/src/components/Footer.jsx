@@ -2,65 +2,73 @@ import React from 'react';
 import { ArrowUp, Heart, BrainCircuit } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
+const currentYear = new Date().getFullYear();
+
 export default function Footer({ profile }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="py-12 border-t border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-950 text-slate-600 dark:text-slate-400 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Brand & Stack note */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-purple-500/25">
-              <BrainCircuit className="w-5 h-5" />
+    <footer className="relative overflow-hidden border-t border-slate-200/80 bg-slate-50 text-slate-600 transition-colors duration-300 dark:border-slate-800/80 dark:bg-slate-950 dark:text-slate-400">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-500/70 to-transparent" />
+      <div className="pointer-events-none absolute -top-32 left-1/2 h-64 w-96 -translate-x-1/2 rounded-full bg-purple-500/10 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-4 pb-6 pt-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 border-b border-slate-200/80 pb-9 dark:border-slate-800/80 md:grid-cols-[1fr_auto_1fr] md:items-center">
+          <a href="#" className="group flex items-center gap-3.5 justify-self-center md:justify-self-start">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-pink-500 text-white shadow-lg shadow-purple-500/20 transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">
+              <BrainCircuit className="h-6 w-6" />
             </div>
             <div>
-              <p className="text-sm font-bold text-slate-900 dark:text-white">
+              <p className="text-base font-extrabold tracking-tight text-slate-900 dark:text-white">
                 MD Asadul Islam
               </p>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                Full-Stack AI Developer · Software Engineer · Dhaka, Bangladesh
+              <p className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+                Full-Stack AI Developer <span className="px-1 text-purple-500">·</span> Software Engineer
+              </p>
+              <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-500">
+                Dhaka, Bangladesh
               </p>
             </div>
-          </div>
+          </a>
 
-          {/* Socials & Center text */}
-          <div className="flex items-center gap-4 text-xs text-slate-500">
+          <nav aria-label="Social profiles" className="flex items-center justify-center gap-2">
             <a
               href="https://github.com/Asadul09"
               target="_blank"
               rel="noreferrer"
-              className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-purple-600 dark:hover:text-purple-400 transition-all hover:scale-110"
-              aria-label="GitHub Profile"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/80 px-3.5 py-2.5 text-xs font-semibold text-slate-600 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple-300 hover:text-purple-700 hover:shadow-md hover:shadow-purple-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-300 dark:hover:border-purple-700 dark:hover:text-purple-300"
             >
-              <GithubIcon className="w-4 h-4" />
+              <GithubIcon className="h-4 w-4" />
+              GitHub
             </a>
             <a
               href={profile?.socialLinks?.linkedin || "https://www.linkedin.com/in/a-j-asad-408839270/"}
               target="_blank"
               rel="noreferrer"
-              className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-purple-600 dark:hover:text-purple-400 transition-all hover:scale-110"
-              aria-label="LinkedIn Profile"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/80 px-3.5 py-2.5 text-xs font-semibold text-slate-600 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-700 hover:shadow-md hover:shadow-indigo-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-300 dark:hover:border-indigo-700 dark:hover:text-indigo-300"
             >
-              <LinkedinIcon className="w-4 h-4" />
+              <LinkedinIcon className="h-4 w-4" />
+              LinkedIn
             </a>
-            <span>•</span>
-            <span className="flex items-center gap-1 font-medium">
-              Engineered with AI & <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 animate-pulse" />
-            </span>
-          </div>
+          </nav>
 
-          {/* Back to top with hover animation */}
           <button
             onClick={scrollToTop}
-            aria-label="Back to top"
-            className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:border-purple-500/40 shadow-sm hover:shadow transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer group"
+            className="group inline-flex items-center justify-center gap-2 justify-self-center rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-bold text-white shadow-md shadow-slate-900/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-purple-700 hover:shadow-lg hover:shadow-purple-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 dark:bg-white dark:text-slate-900 dark:shadow-black/20 dark:hover:bg-purple-200 dark:focus-visible:ring-offset-slate-950 md:justify-self-end"
           >
-            <span>Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
+            Back to top
+            <ArrowUp className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5" />
           </button>
+        </div>
+
+        <div className="flex flex-col items-center justify-between gap-3 pt-5 text-center text-xs text-slate-500 dark:text-slate-500 sm:flex-row sm:text-left">
+          <p>© {currentYear} MD Asadul Islam. All rights reserved.</p>
+          <p className="inline-flex items-center gap-1.5">
+            Crafted with care and AI
+            <Heart className="h-3.5 w-3.5 fill-rose-500 text-rose-500" aria-hidden="true" />
+          </p>
         </div>
       </div>
     </footer>

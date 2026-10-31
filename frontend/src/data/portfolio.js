@@ -1,7 +1,4 @@
-// API Service for MD ASADUL ISLAM - AI Developer Portfolio
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
-
-export const fallbackProfile = {
+export const profileData = {
   fullName: 'MD Asadul Islam',
   roleTitle: 'Full-Stack AI Developer & Software Engineer',
   taglines: [
@@ -75,7 +72,7 @@ export const fallbackProfile = {
   ],
 };
 
-export const fallbackProjects = [
+export const projectsData = [
   {
     _id: '1',
     title: 'VivaBot.AI - AI Interview Prep Platform',
@@ -201,7 +198,7 @@ export const fallbackProjects = [
     title: 'React Portfolio Website',
     category: 'Frontend',
     description:
-      'Modern responsive developer portfolio engineered with React 19, Tailwind CSS, and full MERN API integration showcasing full-stack AI projects and IEEE research.',
+      'Modern responsive developer portfolio engineered with React 19, Tailwind CSS, and Vite, showcasing full-stack AI projects and IEEE research.',
     tags: ['React 19', 'Tailwind CSS', 'Vite', 'Lucide Icons'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     liveUrl: 'https://portfolio-react-lac-eta.vercel.app',
@@ -222,7 +219,7 @@ export const fallbackProjects = [
   },
 ];
 
-export const fallbackSkills = [
+export const skillsData = [
   // AI & Machine Learning
   { name: 'LLMs & Prompt Engineering (GPT-4o, OpenRouter)', category: 'AI & Machine Learning', proficiency: 94, iconName: 'BrainCircuit', featured: true },
   { name: 'Deep Learning & PyTorch', category: 'AI & Machine Learning', proficiency: 88, iconName: 'Cpu', featured: true },
@@ -253,75 +250,3 @@ export const fallbackSkills = [
   { name: 'Postman & API Diagnostics', category: 'Tools & Analytics', proficiency: 90, iconName: 'Terminal', featured: false },
   { name: 'Excel Advanced Analytics', category: 'Tools & Analytics', proficiency: 88, iconName: 'Layout', featured: false },
 ];
-
-export const fetchProfile = async () => {
-  try {
-    const res = await fetch(`${API_BASE_URL}/profile`);
-    if (!res.ok) throw new Error('Failed to fetch profile');
-    const data = await res.json();
-    return data.data || fallbackProfile;
-  } catch (err) {
-    console.warn('Using fallback profile data:', err.message);
-    return fallbackProfile;
-  }
-};
-
-export const fetchProjects = async (category = '') => {
-  try {
-    const query = category && category !== 'All' ? `?category=${encodeURIComponent(category)}` : '';
-    const res = await fetch(`${API_BASE_URL}/projects${query}`);
-    if (!res.ok) throw new Error('Failed to fetch projects');
-    const data = await res.json();
-    return data.data || fallbackProjects;
-  } catch (err) {
-    console.warn('Using fallback projects data:', err.message);
-    if (category && category !== 'All') {
-      return fallbackProjects.filter(
-        (p) => p.category.toLowerCase() === category.toLowerCase()
-      );
-    }
-    return fallbackProjects;
-  }
-};
-
-export const fetchSkills = async (category = '') => {
-  try {
-    const query = category && category !== 'All' ? `?category=${encodeURIComponent(category)}` : '';
-    const res = await fetch(`${API_BASE_URL}/skills${query}`);
-    if (!res.ok) throw new Error('Failed to fetch skills');
-    const data = await res.json();
-    return data.data || fallbackSkills;
-  } catch (err) {
-    console.warn('Using fallback skills data:', err.message);
-    if (category && category !== 'All') {
-      return fallbackSkills.filter(
-        (s) => s.category.toLowerCase() === category.toLowerCase()
-      );
-    }
-    return fallbackSkills;
-  }
-};
-
-export const sendContactMessage = async (formPayload) => {
-  const res = await fetch(`${API_BASE_URL}/contact`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formPayload),
-  });
-
-  const data = await res.json();
-  if (!res.ok) {
-    throw new Error(data.message || 'Failed to send message');
-  }
-  return data;
-};
-
-export const checkBackendHealth = async () => {
-  try {
-    const res = await fetch(`${API_BASE_URL}/health`);
-    if (!res.ok) return { connected: false, message: 'Backend unreachable' };
-    return await res.json();
-  } catch {
-    return { connected: false, message: 'Backend offline' };
-  }
-};

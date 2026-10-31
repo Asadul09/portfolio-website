@@ -6,13 +6,9 @@ import {
   Clock,
   CheckCircle,
   AlertCircle,
-  Database,
-  Loader2,
-  Sparkles,
 } from 'lucide-react';
-import { sendContactMessage } from '../services/api';
 
-export default function Contact({ profile, health }) {
+export default function Contact({ profile }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,7 +17,6 @@ export default function Contact({ profile, health }) {
   });
 
   const [status, setStatus] = useState({
-    submitting: false,
     success: null,
     message: '',
   });
@@ -31,34 +26,24 @@ export default function Contact({ profile, health }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus({
-        submitting: false,
         success: false,
         message: 'Please complete all required fields.',
       });
       return;
     }
 
-    setStatus({ submitting: true, success: null, message: '' });
-
-    try {
-      const response = await sendContactMessage(formData);
-      setStatus({
-        submitting: false,
-        success: true,
-        message: response.message || 'Thank you! Your message has been sent successfully.',
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (err) {
-      setStatus({
-        submitting: false,
-        success: false,
-        message: err.message || 'Oops, failed to send your message. Please try again.',
-      });
-    }
+    const recipient = profile?.email || 'asadut486@gmail.com';
+    const subject = formData.subject || `Portfolio message from ${formData.name}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus({
+      success: true,
+      message: 'Your email app should open with the message ready. Send it from your email app to complete delivery.',
+    });
   };
 
   return (
@@ -138,14 +123,14 @@ export default function Contact({ profile, health }) {
                 </div>
               </div>
 
-              {/* MERN Backend Storage Status Card */}
+              {/* Frontend-only contact details */}
               <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200/80 dark:border-slate-800 text-xs space-y-1 shadow-inner">
                 <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
-                  <Database className="w-4 h-4 text-purple-500" />
-                  <span>MERN Database Pipeline Active</span>
+                  <Mail className="w-4 h-4 text-purple-500" />
+                  <span>Send directly by email</span>
                 </div>
                 <p className="text-slate-500 dark:text-slate-400">
-                  Submissions are dispatched to the Node.js REST API and preserved in MongoDB Atlas collections.
+                  This frontend opens your email app with the message details filled in. No backend or database is used.
                 </p>
               </div>
             </div>
@@ -233,20 +218,10 @@ export default function Contact({ profile, health }) {
 
                 <button
                   type="submit"
-                  disabled={status.submitting}
                   className="w-full py-4 px-6 rounded-2xl font-bold text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:from-purple-700 hover:via-indigo-700 hover:to-pink-700 disabled:opacity-70 shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  {status.submitting ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Transmitting Message...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>Send Message to Asadul</span>
-                    </>
-                  )}
+                  <Send className="w-4 h-4" />
+                  <span>Open Email App</span>
                 </button>
               </form>
             </div>

@@ -1,18 +1,11 @@
 {
   "name": "mern-portfolio-workspace",
   "version": "1.0.0",
-  "description": "Full Stack MERN Developer Portfolio with React, Node, Express & MongoDB Atlas",
+  "description": "Frontend-only React developer portfolio",
   "scripts": {
-    "install:backend": "cd backend && npm install",
-    "install:frontend": "cd frontend && npm install",
-    "install:all": "npm run install:backend && npm run install:frontend",
-    "dev:backend": "cd backend && node server.js",
-    "dev:frontend": "cd frontend && npm run dev",
-    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"cyan,magenta\" \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "build:frontend": "cd frontend && npm run build",
-    "seed": "cd backend && npm run seed"
-  },
-  "devDependencies": {
-    "concurrently": "^9.1.2"
+    "install:frontend": "npm --prefix frontend install",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint"
   }
 }

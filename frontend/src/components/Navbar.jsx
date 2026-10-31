@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { Sun, Moon, Menu, X, Sparkles, Database, Send, BrainCircuit, Download, FileText } from 'lucide-react';
 
-export default function Navbar({ health, profile }) {
+export default function Navbar({ profile }) {
   const { isDark, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
