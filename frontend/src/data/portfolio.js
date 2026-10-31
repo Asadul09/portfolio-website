@@ -10,7 +10,7 @@ export const profileData = {
   ],
   bio: 'Software Engineer and AI Developer with a BSc in Computer Science and Engineering from Ahsanullah University of Science and Technology (AUST). Experienced in architecting intelligent applications, integrating modern foundation models (GPT-4o mini, OpenRouter, Claude), building high-throughput MERN platforms, and conducting machine learning research with first-author IEEE publication.',
   email: 'asadut486@gmail.com',
-  phone: '+880 1791XXXXXX',
+  phone: '+880 1791093112',
   location: 'Dhaka, Bangladesh',
   yearsOfExperience: 1,
   completedProjects: 12,
