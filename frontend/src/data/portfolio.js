@@ -10,7 +10,7 @@ export const profileData = {
   ],
   bio: 'Software Engineer and AI Developer with a BSc in Computer Science and Engineering from Ahsanullah University of Science and Technology (AUST). Experienced in architecting intelligent applications, integrating modern foundation models (GPT-4o mini, OpenRouter, Claude), building high-throughput MERN platforms, and conducting machine learning research with first-author IEEE publication.',
   email: 'asadut486@gmail.com',
-  phone: '+880 1XXXXXXXXX',
+  phone: '+880 1791XXXXXX',
   location: 'Dhaka, Bangladesh',
   yearsOfExperience: 1,
   completedProjects: 12,
@@ -46,7 +46,7 @@ export const profileData = {
     {
       role: 'Data Analyst',
       company: 'Sunset Kuakata Hotel & Resort Ltd.',
-      period: 'August 2024 - Present',
+      period: 'August 2026 - Present',
       location: 'Dhaka, Bangladesh',
       description:
         'Spearheaded CRM database operations, automated analytical Excel workflows, evaluated sales KPIs, and built interactive Power BI business intelligence dashboards for executive decision-making.',
