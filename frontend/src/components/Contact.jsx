@@ -1,9 +1,11 @@
+
 import React, { useState } from 'react';
 import {
   Mail,
   Send,
   MapPin,
   Clock,
+  Phone,
   CheckCircle,
   AlertCircle,
 } from 'lucide-react';
@@ -107,6 +109,26 @@ export default function Contact({ profile }) {
                     </p>
                   </div>
                 </div>
+
+                {/* Phone Number */}
+                {profile?.phone && (
+                  <div className="flex items-start gap-4 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <div className="p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 shrink-0 shadow-sm">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                        Phone
+                      </h4>
+                      <a
+                        href={`tel:${profile.phone}`}
+                        className="text-sm font-bold text-slate-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                      >
+                        {profile.phone}
+                      </a>
+                    </div>
+                  </div>
+                )}
 
                 <div className="flex items-start gap-4 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
                   <div className="p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 shrink-0 shadow-sm">
