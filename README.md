@@ -4,6 +4,10 @@ A modern, responsive, frontend-only personal portfolio built with **React, Vite,
 
 🌐 **Live Portfolio:** [https://portfolio-website-pi-five-83.vercel.app/](https://portfolio-website-pi-five-83.vercel.app/)
 
+## 📸 Portfolio Preview
+
+![Portfolio Screenshot](https://raw.githubusercontent.com/Asadul09/portfolio-website/b4d7c1a1da9aa58c36edfea3ca747c54e637e08f/Screenshot%202026-11-08%20215505.png)
+
 ## 🚀 Tech Stack
 
 - **Frontend:** React.js, Vite
